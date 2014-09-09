@@ -18,7 +18,6 @@ static const BOOL kEnableContinueLabel = YES;
 @implementation WSCoachMarksView {
     CAShapeLayer *mask;
     NSUInteger markIndex;
-    UILabel *lblContinue;
 }
 
 #pragma mark - Properties
@@ -32,6 +31,7 @@ static const BOOL kEnableContinueLabel = YES;
 @synthesize maxLblWidth;
 @synthesize lblSpacing;
 @synthesize enableContinueLabel;
+@synthesize lblContinue;
 
 #pragma mark - Methods
 
