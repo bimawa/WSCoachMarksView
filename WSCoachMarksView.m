@@ -97,8 +97,14 @@ static const BOOL kEnableContinueLabel = YES;
     // Hide until unvoked
     self.hidden = YES;
     
+    // Continue label
     self.lblContinue = [[UILabel alloc] initWithFrame:(CGRect){{0, self.bounds.size.height - 30.0f}, {self.bounds.size.width, 30.0f}}];
-            
+    self.lblContinue.font = [UIFont boldSystemFontOfSize:13.0f];
+    self.lblContinue.textAlignment = NSTextAlignmentCenter;
+    self.lblContinue.text = @"Tap to continue";
+    self.lblContinue.alpha = 0.0f;
+    self.lblContinue.backgroundColor = [UIColor whiteColor];
+    [self addSubview:lblContinue];        
 }
 
 #pragma mark - Cutout modify
@@ -213,12 +219,6 @@ static const BOOL kEnableContinueLabel = YES;
     // Show continue lbl if first mark
     if (self.enableContinueLabel) {
         if (markIndex == 0) {
-            self.lblContinue.font = [UIFont boldSystemFontOfSize:13.0f];
-            self.lblContinue.textAlignment = NSTextAlignmentCenter;
-            self.lblContinue.text = @"Tap to continue";
-            self.lblContinue.alpha = 0.0f;
-            self.lblContinue.backgroundColor = [UIColor whiteColor];
-            [self addSubview:lblContinue];
             [UIView animateWithDuration:0.3f delay:1.0f options:0 animations:^{
                 self.lblContinue.alpha = 1.0f;
             } completion:nil];
