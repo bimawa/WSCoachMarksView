@@ -96,6 +96,9 @@ static const BOOL kEnableContinueLabel = YES;
 
     // Hide until unvoked
     self.hidden = YES;
+    
+    self.lblContinue = [[UILabel alloc] initWithFrame:(CGRect){{0, self.bounds.size.height - 30.0f}, {self.bounds.size.width, 30.0f}}];
+            
 }
 
 #pragma mark - Cutout modify
@@ -210,20 +213,19 @@ static const BOOL kEnableContinueLabel = YES;
     // Show continue lbl if first mark
     if (self.enableContinueLabel) {
         if (markIndex == 0) {
-            lblContinue = [[UILabel alloc] initWithFrame:(CGRect){{0, self.bounds.size.height - 30.0f}, {self.bounds.size.width, 30.0f}}];
-            lblContinue.font = [UIFont boldSystemFontOfSize:13.0f];
-            lblContinue.textAlignment = NSTextAlignmentCenter;
-            lblContinue.text = @"Tap to continue";
-            lblContinue.alpha = 0.0f;
-            lblContinue.backgroundColor = [UIColor whiteColor];
+            self.lblContinue.font = [UIFont boldSystemFontOfSize:13.0f];
+            self.lblContinue.textAlignment = NSTextAlignmentCenter;
+            self.lblContinue.text = @"Tap to continue";
+            self.lblContinue.alpha = 0.0f;
+            self.lblContinue.backgroundColor = [UIColor whiteColor];
             [self addSubview:lblContinue];
             [UIView animateWithDuration:0.3f delay:1.0f options:0 animations:^{
-                lblContinue.alpha = 1.0f;
+                self.lblContinue.alpha = 1.0f;
             } completion:nil];
         } else if (markIndex > 0 && lblContinue != nil) {
             // Otherwise, remove the lbl
-            [lblContinue removeFromSuperview];
-            lblContinue = nil;
+            [self.lblContinue removeFromSuperview];
+            self.lblContinue = nil;
         }
     }
 }
