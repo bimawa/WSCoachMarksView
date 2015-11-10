@@ -52,6 +52,7 @@
 @property (nonatomic) CGFloat lblSpacing;
 @property (nonatomic) BOOL enableContinueLabel;
 @property (nonatomic) UILabel *lblContinue;
+@property (nonatomic) BOOL enableSkipButton;
 
 - (id)initWithFrame:(CGRect)frame coachMarks:(NSArray *)marks;
 - (void)start;
