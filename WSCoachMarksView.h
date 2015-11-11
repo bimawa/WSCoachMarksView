@@ -51,6 +51,7 @@
 @property (nonatomic) CGFloat maxLblWidth;
 @property (nonatomic) CGFloat lblSpacing;
 @property (nonatomic) BOOL enableContinueLabel;
+@property (nonatomic) UILabel *lblCaption;
 @property (nonatomic) UILabel *lblContinue;
 @property (nonatomic) BOOL enableSkipButton;
 

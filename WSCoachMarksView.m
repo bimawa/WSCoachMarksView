@@ -253,11 +253,11 @@ static const BOOL kEnableSkipButton = YES;
     
     // Show continue lbl if first mark
     if (self.enableContinueLabel) {
-        if (markIndex != self.coachMarks.count) {
+        if (markIndex != self.coachMarks.count-1) {
             [UIView animateWithDuration:0.3f delay:1.0f options:0 animations:^{
                 self.lblContinue.alpha = 1.0f;
             } completion:nil];
-        } else if (markIndex == self.coachMarks.count && lblContinue != nil) {
+        } else if (markIndex == self.coachMarks.count-1 && lblContinue != nil) {
            self.lblContinue.text = @"ГОТОВО";
 	}
 	
