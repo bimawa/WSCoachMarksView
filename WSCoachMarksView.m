@@ -102,7 +102,8 @@ static const BOOL kEnableSkipButton = YES;
     self.hidden = YES;
     
     // Continue label
-    self.lblContinue = [[UILabel alloc] initWithFrame:(CGRect){{0, self.bounds.size.height - 30.0f}, {self.bounds.size.width, 30.0f}}];
+    NSInteger lblContinueHeight = 48.0f;
+    self.lblContinue = [[UILabel alloc] initWithFrame:(CGRect){{0, self.bounds.size.height - lblContinueHeight}, {self.bounds.size.width, lblContinueHeight}}];
     self.lblContinue.font = [UIFont boldSystemFontOfSize:13.0f];
     self.lblContinue.textAlignment = NSTextAlignmentCenter;
     self.lblContinue.text = @"Tap to continue";
